@@ -109,14 +109,10 @@ bool isPrime(int n) {
 }
 
 /*checks for whether gcd of parameters are 1, meaning relatively prime, thus returning a boolean value.*/
-bool isRelativelyPrime(int a, int b) {
-    if (gcd(a, b) == 1) return true;
-    return false;
-}
+bool isRelativelyPrime(int a, int b) { return gcd(a, b) == 1; }
+
 /*basic function that uses recursion to calculate the greatest common divisor.*/
-int gcd(int a, int b) {
-    return b == 0 ? a : gcd(b, a % b);
-}
+int gcd(int a, int b) { return b == 0 ? a : gcd(b, a % b); }
 
 /// <summary>
 /// the values q and p should both be prime, and the values e and phi should have no gcd other than 1.
