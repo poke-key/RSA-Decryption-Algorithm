@@ -115,8 +115,7 @@ bool isRelativelyPrime(int a, int b) {
 }
 /*basic function that uses recursion to calculate the greatest common divisor.*/
 int gcd(int a, int b) {
-    if (b == 0) return a;
-    return gcd(b, a % b);
+    return b == 0 ? a : gcd(b, a % b);
 }
 
 /// <summary>
@@ -132,8 +131,7 @@ bool isValidKey(int q, int p, int e, int phi) {
         return false;
     if (!isPrime(q)) return false;
     if (!isRelativelyPrime(e, phi)) return false;
-    if (p == q) 
-        return false;
+    if (p == q) return false;
     return true;
 }
 /*function that is used to calculate d.*/
