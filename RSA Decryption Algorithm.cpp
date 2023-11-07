@@ -28,7 +28,7 @@ int main() {
     /*use vectors to read and store the integers in the encrypted message and output the new decrypted message.*/
     vector<int> encryptedMsgs, decryptedMsgs;
 
-    for (int i = 0; i < length; ++i) {
+    for (int i = 0; i < length; i++) {
         cin >> msg;
         if (!cin.good()) {
             cout << "Public key is not valid!";
@@ -50,18 +50,18 @@ int main() {
 
     d = calcModInverse(e, phi);
 
-    for (int i = 0; i < length; ++i) {
+    for (int i = 0; i < length; i++) {
         decryptedMsgs.push_back(decryptMsg(encryptedMsgs.at(i), d, n));
     }
 
     //Print everything
     cout << p << " " << q << " " << phi << " " << d << "\n";
-    for (int i = 0; i < length; ++i) {
+    for (int i = 0; i < length; i++) {
         cout << decryptedMsgs.at(i) << " ";
     }
     cout << "\n";
 
-    for (int i = 0; i < length; ++i) {
+    for (int i = 0; i < length; i++) {
         cout << decodetoChar(decryptedMsgs.at(i));
     }
     return 0;
