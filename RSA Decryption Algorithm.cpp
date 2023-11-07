@@ -16,14 +16,7 @@ char decodetoChar(int);
 
 int main() {
     //List of variables needed for the RSA
-    int length;
-    int msg;
-    int e;
-    int n;
-    int q;
-    int p;
-    int phi;
-    int d;
+    int length, msg, e, n, q, p, phi, d;
 
     cin >> e >> n >> length;
 
