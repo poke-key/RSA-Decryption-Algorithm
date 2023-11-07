@@ -26,8 +26,7 @@ int main() {
         return 0;
     }
     /*use vectors to read and store the integers in the encrypted message and output the new decrypted message.*/
-    vector<int> encryptedMsgs;
-    vector<int> decryptedMsgs;
+    vector<int> encryptedMsgs, decryptedMsgs;
 
     for (int i = 0; i < length; ++i) {
         cin >> msg;
@@ -125,7 +124,6 @@ int calcModInverse(int e, int phi) {
     int m0 = phi, x = 1, y = 0;
 
     while (e > 1) {
-
         int quotient = e / phi; //find quotient of the numbers
         int tempValue = phi;
         phi = e % phi;      // make remainder m, swap
