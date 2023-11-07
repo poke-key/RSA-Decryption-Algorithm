@@ -123,11 +123,8 @@ int gcd(int a, int b) { return b == 0 ? a : gcd(b, a % b); }
 /// <param name="phi"></param>
 /// <returns></returns>
 bool isValidKey(int q, int p, int e, int phi) {
-    if (!isPrime(p)) 
+    if (!isPrime(p) || !isPrime(q) || !isRelativelyPrime(e, phi) || p == q)
         return false;
-    if (!isPrime(q)) return false;
-    if (!isRelativelyPrime(e, phi)) return false;
-    if (p == q) return false;
     return true;
 }
 /*function that is used to calculate d.*/
@@ -161,7 +158,7 @@ int decryptMsg(int x, int n, int m) {
         return (x * new_power) % m;
     }
 }
-/*takes cipher value as parameter, decodes decrypted value into a charr and returns it based on switch case statements for the parameter. Return breaks out of the switch-case statements*/
+/*takes cipher value as parameter, decodes decrypted value into a char and returns it based on switch case statements for the parameter. Return breaks out of the switch-case statements*/
 char decodetoChar(int c) {
     char new_c = c + 60;
 
